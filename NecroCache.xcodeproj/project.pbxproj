@@ -19,6 +19,7 @@
 		64226D1816979E4100226389 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64226D1616979E4100226389 /* MainStoryboard_iPhone.storyboard */; };
 		64226D1B16979E4100226389 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64226D1916979E4100226389 /* MainStoryboard_iPad.storyboard */; };
 		64226D1E16979E4100226389 /* MSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64226D1D16979E4100226389 /* MSViewController.m */; };
+		64226D2616979F2D00226389 /* NecroCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 64226D2516979F2D00226389 /* NecroCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		64226D1A16979E4100226389 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		64226D1C16979E4100226389 /* MSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSViewController.h; sourceTree = "<group>"; };
 		64226D1D16979E4100226389 /* MSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSViewController.m; sourceTree = "<group>"; };
+		64226D2416979F2C00226389 /* NecroCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NecroCache.h; sourceTree = "<group>"; };
+		64226D2516979F2D00226389 /* NecroCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NecroCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 				64226D1C16979E4100226389 /* MSViewController.h */,
 				64226D1D16979E4100226389 /* MSViewController.m */,
 				64226D0516979E4100226389 /* Supporting Files */,
+				64226D2416979F2C00226389 /* NecroCache.h */,
+				64226D2516979F2D00226389 /* NecroCache.m */,
 			);
 			path = NecroCache;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 				64226D0B16979E4100226389 /* main.m in Sources */,
 				64226D0F16979E4100226389 /* MSAppDelegate.m in Sources */,
 				64226D1E16979E4100226389 /* MSViewController.m in Sources */,
+				64226D2616979F2D00226389 /* NecroCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

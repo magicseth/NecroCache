@@ -7,12 +7,43 @@
 //
 
 #import "MSAppDelegate.h"
+#import "NecroCache.h"
 
 @implementation MSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    NSCache * c = [[NecroCache alloc] init];
+    [c setCountLimit:3];
+    for (int i = 0; i< 10; i ++) {
+        [c setObject:[NSString stringWithFormat:@"object %d", i] forKey:[NSString stringWithFormat:@"%d", i]];
+    }
+    
+    for (int i = 0; i< 10; i ++) {
+        NSNumber * n = [c objectForKey:[NSString stringWithFormat:@"%d", i]];
+        if (n) {
+            NSLog(@" cache hit for %d", i);
+        } else {
+            NSLog(@" cache miss for %d", i);
+        }
+    }
+    
+    int64_t delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        for (int i = 0; i< 10; i ++) {
+            NSNumber * n = [c objectForKey:[NSString stringWithFormat:@"%d", i]];
+            if (n) {
+                NSLog(@" cache hit for %d", i);
+            } else {
+                NSLog(@" cache miss for %d", i);
+            }
+        }
+
+    });
+
     return YES;
 }
 							
