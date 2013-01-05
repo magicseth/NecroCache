@@ -7,7 +7,7 @@
 //
 
 #import "NecroCache.h"
-
+#import "NSObject+SFExecuteOnDealloc.h"
 
 @interface NecroCache ()
 @property NSMutableDictionary *weakCache;
@@ -28,6 +28,9 @@
     [super setObject:obj forKey:key cost:g];
     WeakWrapper *ww = [[WeakWrapper alloc] init];
     [ww setContents:obj];
+    [obj performBlockOnDealloc:^{
+        [self weakPurge:key];
+    }];
     [self.weakCache setObject:ww forKey:key];
 }
 
@@ -39,6 +42,12 @@
 - (void)removeAllObjects {
     [super removeAllObjects];
     [self.weakCache removeAllObjects];
+}
+
+- (void)weakPurge:(id)key {
+    if ([self.weakCache objectForKey:key]) {
+        [self.weakCache removeObjectForKey:key];
+    }
 }
 
 
